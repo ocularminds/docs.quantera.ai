@@ -1,0 +1,172 @@
+---
+title: Quantera.Ai - Visualize API
+description: This section describes the API endpoints for the Visualize API.  All paths are prefixed with `/visualize`.
+
+---
+
+
+# Visualize
+This section describes the API endpoints for the Visualize API.  All paths are prefixed with `/visualize`.
+
+## Health Check
+
+### GET /visualize/health
+Description: Returns the health status of the API.
+
+**Response:**
+
+```json
+{
+  "status": "string"
+}
+```
+**Response Parameters**:
+
+- `status` (string): The health status of the API. Expected values include "ok".
+
+## Generate Plot
+
+### POST /visualize/plots/generate
+Description: Generates a plot based on the provided data and configuration.
+
+**Request Body:**
+
+```json
+{
+  "data": {
+    "type": "string",
+    "values": [
+      {
+        "x": "number",
+        "y": "number"
+      }
+    ]
+  },
+  "config": {
+    "title": "string",
+    "xAxisLabel": "string",
+    "yAxisLabel": "string"
+  }
+}
+```
+
+**Request Body Parameters**:
+
+- `data` (object, required): The data for the plot.
+- `type` (string, required): The type of plot. Examples include "line", "bar", "scatter".
+- `values` (array, required): An array of data points.
+- `x` (number): The x-coordinate of the data point.
+- `y` (number): The y-coordinate of the data point.
+- `config` (object, optional): The configuration for the plot.
+- `title` (string): The title of the plot.
+- `xAxisLabel` (string): The label for the x-axis.
+- `yAxisLabel` (string): The label for the y-axis.
+
+**Response:**
+
+```json
+{
+  "plotId": "string"
+}
+```
+
+**Response Parameters**
+
+- `plotId` (string): The ID of the generated plot.
+
+## Preview Plot
+
+### POST /visualize/plots/preview
+Description: Generates a preview of a plot based on the provided data and configuration.  This endpoint returns the actual image data.
+
+**Request Body:**
+
+```json
+{
+  "data": {
+    "type": "string",
+    "values": [
+      {
+        "x": "number",
+        "y": "number"
+      }
+    ]
+  },
+  "config": {
+    "title": "string",
+    "xAxisLabel": "string",
+    "yAxisLabel": "string"
+  }
+}
+```
+
+**Request Body Parameters**:
+
+- `data` (object, required): The data for the plot.
+- `type` (string, required): The type of plot. Examples include "line", "bar", "scatter".
+- `values` (array, required): An array of data points.
+- `x` (number): The x-coordinate of the data point.
+- `y` (number): The y-coordinate of the data point.
+- `config` (object, optional): The configuration for the plot.
+- `title` (string): The title of the plot.
+- `xAxisLabel` (string): The label for the x-axis.
+- `yAxisLabel` (string): The label for the y-axis.
+
+**Response:**
+
+(Binary data - image/png, image/jpeg, etc.)
+
+## Get Plot
+
+### GET /visualize/plots/`{plotId}`
+Description: Retrieves a plot by its ID.
+
+**Parameters**:
+
+- `plotId` (string, path, required): The ID of the plot to retrieve.
+
+**Response:**
+
+(Binary data - image/png, image/jpeg, etc.)
+
+## List Plots
+
+### GET /visualize/plots
+Description: Retrieves a list of available plots.
+
+**Response:**
+
+```json
+[
+  {
+    "plotId": "string",
+    "createdAt": "string"
+  }
+]
+```
+
+**Response Parameters**
+
+- `plotId` (string): The ID of the plot.
+- `createdAt` (string): The timestamp of when the plot was created.
+
+## Delete Plot
+
+### DELETE /visualize/plots/`{plotId}`
+Description: Deletes a plot by its ID.
+
+**Parameters**:
+
+- `plotId` (string, path, required): The ID of the plot to delete.
+
+**Response:**
+
+```json
+{
+  "message": "string"
+}
+```
+
+**Response Parameters**
+
+- `message` (string): A message indicating the success of the deletion.

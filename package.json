@@ -1,0 +1,27 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Quanteraa.AI API documentation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next --turbopack",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [
+    "quantera",
+    "ai",
+    "api"
+  ],
+  "author": "Festus B. Jejelowo",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^15.1.7",
+    "nextra": "^4.2.12",
+    "nextra-theme-docs": "^4.2.12",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^9.0.3",
+    "redoc": "^2.4.0"
+  }
+}

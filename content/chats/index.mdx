@@ -1,0 +1,186 @@
+---
+title: Quantera API - Chats
+description: This section describes the API endpoints for managing chats.
+---
+
+# Chats
+
+This document provides an overview of the API endpoints under `/chats/`.
+
+
+---
+
+## Chats
+
+This section describes the API endpoints for managing chats.
+
+### Create Chat
+
+### POST /chats
+Description: Creates a new chat.
+
+**Request Body:**
+
+```json
+{
+  "name": "string",
+  "participants": [
+    "string"
+  ]
+}
+```
+**Parameters**:
+
+- `name` (string, required): The name of the chat.
+- `participants` (array, required): An array of user IDs participating in the chat.
+
+**Response:**
+
+```json
+{
+  "id": "string",
+  "name": "string",
+  "participants": [
+    "string"
+  ],
+  "createdAt": "string",
+  "updatedAt": "string"
+}
+````
+
+Response Parameters:
+
+- `id` (string): The ID of the created chat.
+- `name` (string): The name of the chat.
+- `participants` (array): An array of user IDs participating in the chat.
+- `createdAt` (string): The timestamp of when the chat was created.
+- `updatedAt` (string): The timestamp of when the chat was last updated.
+
+## Get Chat
+
+### GET /chats/`{chatId}`
+Description: Retrieves a chat by ID.
+
+**Parameters**:
+
+- `chatId` (string, path, required): The ID of the chat to retrieve.
+
+**Response:**
+
+```json
+{
+  "id": "string",
+  "name": "string",
+  "participants": [
+    "string"
+  ],
+  "createdAt": "string",
+  "updatedAt": "string"
+}
+````
+
+**Response Parameters**:
+
+- `id` (string): The ID of the chat.
+- `name` (string): The name of the chat.
+- `participants` (array): An array of user IDs participating in the chat.
+- `createdAt` (string): The timestamp of when the chat was created.
+- `updatedAt` (string): The timestamp of when the chat was last updated.
+
+## Update Chat
+
+### PUT /chats/`{chatId}`
+Description: Updates a chat by ID.
+
+**Parameters**:
+
+- `chatId` (string, path, required): The ID of the chat to update.
+**Request Body:**
+
+```json
+{
+  "name": "string",
+  "participants": [
+    "string"
+  ]
+}
+````
+
+**Parameters**:
+
+- `name` (string, optional): The new name of the chat.
+- `participants` (array, optional): An array of user IDs participating in the chat.
+
+**Response:**
+
+```json
+{
+  "id": "string",
+  "name": "string",
+  "participants": [
+    "string"
+  ],
+  "createdAt": "string",
+  "updatedAt": "string"
+}
+````
+
+**Response Parameters**:
+
+- `id` (string): The ID of the chat.
+- `name` (string): The name of the chat.
+- `participants` (array): An array of user IDs participating in the chat.
+- `createdAt` (string): The timestamp of when the chat was created.
+- `updatedAt` (string): The timestamp of when the chat was last updated.
+
+## Delete Chat
+
+### DELETE /chats/`{chatId}`
+Description: Deletes a chat by ID.
+
+**Parameters**:
+
+- `chatId` (string, path, required): The ID of the chat to delete.
+
+**Response:**
+
+```json
+{
+  "message": "string"
+}
+```
+**Response Parameters**:
+
+message (string): A message indicating the success of the deletion.
+## List Chats
+
+### GET /chats
+Description: Retrieves a list of chats.
+
+**Parameters**:
+
+- `page` (integer, query, optional): The page number of the results to return.
+- `pageSize` (integer, query, optional): The number of results to return per page.
+
+**Response:**
+
+```json
+[
+  {
+    "id": "string",
+    "name": "string",
+    "participants": [
+      "string"
+    ],
+    "createdAt": "string",
+    "updatedAt": "string"
+  }
+]
+```
+**Response Object**:
+
+- `id` (string): The ID of the chat.
+- `name` (string): The name of the chat.
+- `participants` (array): An array of user IDs participating in the chat.
+- `createdAt` (string): The timestamp of when the chat was created.
+- `updatedAt` (string): The timestamp of when the chat was last updated.

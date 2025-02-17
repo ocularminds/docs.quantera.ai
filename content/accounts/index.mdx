@@ -1,0 +1,190 @@
+---
+title: Quantera API - Accounts
+description: This documentation provides detailed information about the Quantera API.
+---
+
+export const id = '12345'; 
+export const user_id = '12345'; 
+
+# 3. **Accounts**
+This section covers endpoints related to user profiles, subscriptions, and company data.
+
+---
+
+## User Profile
+
+### POST /users/{id}/profile
+
+Submit user information and send an email upon successful submission.
+
+**Parameters:**
+
+- `id` (string, required): The ID of the user.
+
+**Request Body:**
+```json
+{
+  "userId": "12345",
+  "closestOption": "Option1",
+  "frequency": "Daily",
+  "frequencyAmount": 5,
+  "investMarket": ["Stock", "Crypto"],
+  "investSector": ["Technology", "Finance"]
+}
+```
+
+**Response**:
+```json
+{
+  "error": false,
+  "msg": "Email sent successfully.",
+  "body": []
+}
+```
+
+---
+
+### GET /users/{id}/profile
+
+Retrieve user information based on the provided ID.
+
+Parameters:
+
+id (string, required): The ID of the user.
+
+**Response**:
+```json
+{
+  "error": false,
+  "msg": "Success",
+  "body": [
+    {
+      "id": 1,
+      "closestOption": "Option1",
+      "frequency": "Daily",
+      "frequencyAmount": 5,
+      "investMarket": ["Stock", "Crypto"],
+      "investSector": ["Technology", "Finance"]
+    }
+  ]
+}
+```
+
+---
+
+# Authentication
+
+This section covers all authentication-related endpoints, including login, password reset, and account verification.
+
+---
+
+## Login with Google or Discord
+
+### POST /auth/login
+
+Authenticate a user using Google or Discord OAuth2.
+
+**Request Body:**
+```json
+{
+  "authProvider": "google",
+  "code": "4/abcd1234"
+}
+```
+
+**Response**:
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+---
+
+## Request a Password Reset
+
+### POST /auth/password
+
+Sends a password reset email to the user based on their email address.
+
+**Request Body:**
+```json
+{
+  "email": "user@example.com"
+}
+```
+
+**Response**:
+```json
+{
+  "error": false,
+  "message": "Email sent successfully",
+  "body": {}
+}
+```
+
+---
+
+## Reset User Password
+
+### POST /auth/reset
+
+Resets the password for a user based on the provided encrypted user ID and new password.
+
+**Request Body**:
+```json
+{
+  "_id": "encryptedUserId",
+  "password": "newPassword123"
+}
+```
+
+**Response**:
+```json
+{
+  "error": false,
+  "message": "Password updated successfully",
+  "body": {}
+}
+```
+
+---
+
+## Change Account Verification Status
+
+### GET /accounts/{id}/status
+
+Updates the account verification status to 'ACTIVE' for the user with the provided encrypted user ID.
+
+**Parameters:**
+- `id` (string, required): The encrypted ID of the user.
+
+**Response**:
+```json
+{
+  "error": false,
+  "message": "Account status updated successfully.",
+  "body": {}
+}
+```
+
+---
+
+## Get Account Verification Status
+
+### GET /accounts/{user_id}/status
+
+Retrieves the account verification status for the user with the provided user ID.
+
+**Parameters:**
+- `user_id` (string, required): The user ID for which the account verification status is to be retrieved.
+
+**Response**:
+```json
+{
+  "error": false,
+  "message": "Account Status retrieved successfully",
+  "body": {
+    "email_status": "ACTIVE"
+  }
+}```

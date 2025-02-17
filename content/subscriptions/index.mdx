@@ -1,0 +1,197 @@
+---
+title: Subscription API Endpoints
+description: This section describes the API endpoints for managing subscriptions.
+---
+
+# Subscriptions
+This section describes the API endpoints for managing subscriptions.
+
+## Create Subscription
+
+### POST /subscriptions
+Description: Creates a new subscription.
+
+**Request Body:**
+
+```json
+{
+  "planId": "string",
+  "userId": "string",
+  "paymentMethodId": "string"
+}
+````
+
+Request Body Parameters:
+
+- planId (string, required): The ID of the subscription plan. Example: "premium-monthly".
+- userId (string, required): The ID of the user subscribing. Example: "user123".
+- paymentMethodId (string, required): The ID of the payment method to use for the subscription. Example: "payment456".
+
+Example Request:
+
+```json
+{
+  "planId": "premium-monthly",
+  "userId": "user123",
+  "paymentMethodId": "payment456"
+}
+````
+
+Response:
+
+```json
+{
+  "subscriptionId": "string",
+  "status": "string",
+  "startDate": "string",
+  "endDate": "string",
+  "plan": {
+    "planId": "string",
+    "name": "string",
+    "price": "number",
+    "currency": "string"
+  },
+  "user": {
+    "userId": "string"
+  }
+}
+````
+
+**Response Parameters**:
+
+_ subscriptionId (string): The ID of the created subscription. Example: "sub789".
+- status (string): The status of the subscription. Example: "active", "pending", "cancelled".
+- startDate (string): The start date of the subscription (ISO 8601 format). Example: "2024-07-20T00:00:00Z".
+- endDate (string): The end date of the subscription (ISO 8601 format). Example: "2024-08-20T00:00:00Z".
+- plan (object): The details of the subscription plan.
+- planId (string): The ID of the subscription plan. Example: "premium-monthly".
+- name (string): The name of the subscription plan. Example: "Premium Monthly".
+- price (number): The price of the subscription plan. Example: 19.99.
+- currency (string): The currency of the subscription plan. Example: "USD".
+- user (object): The details of the user who subscribed.
+- userId (string): The ID of the user. Example: "user123".
+Example Response:
+
+```json
+{
+  "subscriptionId": "sub789",
+  "status": "active",
+  "startDate": "2024-07-20T00:00:00Z",
+  "endDate": "2024-08-20T00:00:00Z",
+  "plan": {
+    "planId": "premium-monthly",
+    "name": "Premium Monthly",
+    "price": 19.99,
+    "currency": "USD"
+  },
+  "user": {
+    "userId": "user123"
+  }
+}
+````
+
+## Get Subscription
+
+### GET /subscriptions/`{subscriptionId}`
+Description: Retrieves a subscription by ID.
+
+**Parameters**:
+
+- `subscriptionId` (string, path, required): The ID of the subscription to retrieve. Example: "sub789".
+Response:
+
+```json
+{
+  "subscriptionId": "string",
+  "status": "string",
+  "startDate": "string",
+  "endDate": "string",
+  "plan": {
+    "planId": "string",
+    "name": "string",
+    "price": "number",
+    "currency": "string"
+  },
+  "user": {
+    "userId": "string"
+  }
+}
+````
+
+(The structure and example of the response body are the same as in the "Create Subscription" endpoint.)
+
+## Update Subscription
+
+### PUT /subscriptions/`{subscriptionId}`
+Description: Updates a subscription by ID.  Currently, only updating the payment method is supported.
+
+Parameters:
+
+- subscriptionId (string, path, required): The ID of the subscription to update. Example: "sub789".
+**Request Body:**
+
+```json
+{
+  "paymentMethodId": "string"
+}
+````
+
+Request Body Parameters:
+
+- `paymentMethodId` (string, required): The ID of the new payment method to use for the subscription. Example: "payment987".
+Example Request:
+
+```json
+{
+  "paymentMethodId": "payment987"
+}
+````
+
+Response:
+
+```json
+{
+  "subscriptionId": "string",
+  "status": "string",
+  "startDate": "string",
+  "endDate": "string",
+  "plan": {
+    "planId": "string",
+    "name": "string",
+    "price": "number",
+    "currency": "string"
+  },
+  "user": {
+    "userId": "string"
+  }
+}
+````
+
+(The structure and example of the response body are the same as in the "Create Subscription" endpoint.)
+
+## Cancel Subscription
+
+### DELETE /subscriptions/`{subscriptionId}`
+Description: Cancels a subscription by ID.
+
+Parameters:
+
+- subscriptionId (string, path, required): The ID of the subscription to cancel. Example: "sub789".
+Response:
+
+```json
+{
+  "message": "string"
+}
+````
+
+**Response Parameters**:
+
+- message (string): A message indicating the success of the cancellation. Example: "Subscription cancelled successfully".
+Example Response:
+
+```json
+{
+  "message": "Subscription cancelled successfully"
+}
+````
