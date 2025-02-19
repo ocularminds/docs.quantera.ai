@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 63, "column": 0}, "map": {"version":3,"sources":["file:///Users/bonus/develop/jobs/quantera.ai/docs/pages/login.js"],"sourcesContent":["import { useSession, getSession, signIn, signOut } from \"next-auth/react\"\n\nexport async function getServerSideProps(context) {\n  const session = await getSession(context)\n  return {\n    props: { session }, // Pass the session to the page props\n  }\n}\n\nexport default function Login() {\n  const { data: session } = useSession();\n  if (session) {\n    return (\n      <>\n        Signed in as {session.user.email} <br />\n        <button onClick={() => signOut()}>Sign out</button>\n      </>\n    )\n  }\n  return (\n    <>\n      Not signed in <br />\n      <button onClick={() => signIn()}>Sign in</button>\n    </>\n  )\n}"],"names":[],"mappings":";;;;;AAAA;;;AAEO,eAAe,mBAAmB,OAAO;IAC9C,MAAM,UAAU,MAAM,CAAA,GAAA,mIAAA,CAAA,aAAU,AAAD,EAAE;IACjC,OAAO;QACL,OAAO;YAAE;QAAQ;IACnB;AACF;AAEe,SAAS;IACtB,MAAM,EAAE,MAAM,OAAO,EAAE,GAAG,CAAA,GAAA,mIAAA,CAAA,aAAU,AAAD;IACnC,IAAI,SAAS;QACX,qBACE;;gBAAE;gBACc,QAAQ,IAAI,CAAC,KAAK;gBAAC;8BAAC,qKAAC;;;;;8BACnC,qKAAC;oBAAO,SAAS,IAAM,CAAA,GAAA,mIAAA,CAAA,UAAO,AAAD;8BAAK;;;;;;;;IAGxC;IACA,qBACE;;YAAE;0BACc,qKAAC;;;;;0BACf,qKAAC;gBAAO,SAAS,IAAM,CAAA,GAAA,mIAAA,CAAA,SAAM,AAAD;0BAAK;;;;;;;;AAGvC"}},
+    {"offset": {"line": 122, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

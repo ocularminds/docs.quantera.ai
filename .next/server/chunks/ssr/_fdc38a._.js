@@ -11,7 +11,11 @@ __turbopack_esm__({
 const __TURBOPACK__default__export__ = {
     index: {
         title: 'Home',
-        type: 'page'
+        type: 'page',
+        theme: {
+            toc: true,
+            sidebar: true
+        }
     },
     auth: {
         title: 'Authentication',
@@ -79,7 +83,7 @@ const metadata = {
     "title": "Quantera API - Authentication",
     "description": "This documentation provides detailed information about the Quantera API.",
     "filePath": "content/auth/index.mdx",
-    "timestamp": 1739759837645
+    "timestamp": 1739814839172
 };
 const id = '12345';
 const user_id = '12345';
@@ -1902,7 +1906,7 @@ const metadata = {
     "title": "Quantera API - Accounts",
     "description": "This documentation provides detailed information about the Quantera API.",
     "filePath": "content/accounts/index.mdx",
-    "timestamp": 1739759837645
+    "timestamp": 1739814840218
 };
 const id = '12345';
 const user_id = '12345';
@@ -5158,7 +5162,7 @@ const metadata = {
     "title": "Quantera API - Chats",
     "description": "This section describes the API endpoints for managing chats.",
     "filePath": "content/chats/index.mdx",
-    "timestamp": 1739764052236
+    "timestamp": 1739814840718
 };
 function useTOC(props) {
     const _components = {
@@ -8146,7 +8150,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$flow$2e$png$2e$mjs
 const metadata = {
     "title": "API Reference",
     "filePath": "content/index.mdx",
-    "timestamp": 1739764052236
+    "timestamp": 1739814840191
 };
 function useTOC(props) {
     return [
@@ -8618,7 +8622,7 @@ const metadata = {
     "title": "Subscription API Endpoints",
     "description": "This section describes the API endpoints for managing subscriptions.",
     "filePath": "content/subscriptions/index.mdx",
-    "timestamp": 1739787715450
+    "timestamp": 1739814840743
 };
 function useTOC(props) {
     const _components = {
@@ -12473,7 +12477,7 @@ const metadata = {
     "title": "Quantera.Ai - Visualize API",
     "description": "This section describes the API endpoints for the Visualize API.  All paths are prefixed with `/visualize`.",
     "filePath": "content/visualization/index.mdx",
-    "timestamp": 1739785430824
+    "timestamp": 1739814841177
 };
 function useTOC(props) {
     const _components = {

@@ -1,0 +1,32 @@
+// components/Login.js (or similar)
+import SessionWrapper from "../..components/SessionWrapper"
+import { useSession, signIn, signOut } from "next-auth/react";
+
+export default function Login() {
+  const { data: session } = useSession();
+  if (session) {
+    return (
+      <SessionWrapper>
+        Signed in as {session.user.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </SessionWrapper>
+    );
+  }
+  return (
+    <SessionWrapper>
+      Not signed in or create account<br />
+      <button onClick={() => signIn()}>Sign in</button>
+    </SessionWrapper>
+  );
+}
+
+// your-page.mdx
+import LoginButton from '../../components/LoginButton' // Path to your component
+
+# My Page
+
+Some content...
+
+<LoginButton />  {/* Use the component here */}
+
+More content...

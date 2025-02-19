@@ -1,0 +1,11 @@
+(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push([
+    "static/chunks/8069e_@mermaid-js_parser_dist_chunks_mermaid-parser_core_gitGraph-YCYPL57B_mjs_753c98._.js",
+    {},
+]);
+(globalThis.TURBOPACK_CHUNK_LISTS = globalThis.TURBOPACK_CHUNK_LISTS || []).push({
+  "path": "static/chunks/8069e_@mermaid-js_parser_dist_chunks_mermaid-parser_core_gitGraph-YCYPL57B_mjs_753c98._.js",
+  "chunks": [
+    "static/chunks/8069e_@mermaid-js_parser_dist_chunks_mermaid-parser_core_gitGraph-YCYPL57B_mjs_31565f._.js"
+  ],
+  "source": "dynamic"
+});

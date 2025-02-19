@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 39, "column": 0}, "map": {"version":3,"sources":["file:///Users/bonus/develop/jobs/quantera.ai/docs/pages/_app.js"],"sourcesContent":["\nimport { Head } from \"nextra/components\";\nimport { SessionProvider } from \"next-auth/react\"\n\nfunction MyApp({ Component, pageProps }) {\n  return (\n    <>\n      <Head></Head>\n      <body>\n    <SessionProvider session={pageProps.session}>\n      <Component {...pageProps} />\n    </SessionProvider>\n        </body>\n      </>\n  )\n}\n\nexport default MyApp;"],"names":[],"mappings":";;;;AAEA;AADA;;;;AAGA,SAAS,MAAM,EAAE,SAAS,EAAE,SAAS,EAAE;IACrC,qBACE;;0BACE,qKAAC,uJAAA,CAAA,OAAI;;;;;0BACL,qKAAC;0BACH,cAAA,qKAAC,mIAAA,CAAA,kBAAe;oBAAC,SAAS,UAAU,OAAO;8BACzC,cAAA,qKAAC;wBAAW,GAAG,SAAS;;;;;;;;;;;;;;;;;;AAK9B;uCAEe"}},
+    {"offset": {"line": 80, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

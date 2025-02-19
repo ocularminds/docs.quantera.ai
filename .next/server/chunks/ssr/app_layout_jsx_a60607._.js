@@ -25,7 +25,7 @@ const metadata = {
 };
 const banner = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2f$dist$2f$client$2f$components$2f$banner$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Banner"], {
     storageKey: "quantera",
-    children: "Quantera.AI 2.0 is released 🎉"
+    children: "VX.AI 2.0 is released 🎉"
 }, void 0, false, {
     fileName: "[project]/app/layout.jsx",
     lineNumber: 11,
@@ -33,7 +33,7 @@ const banner = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f
 }, this);
 const navbar = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2d$theme$2d$docs$2f$dist$2f$components$2f$navbar$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Navbar"], {
     logo: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
-        children: "Quantera.AI"
+        children: "VX.AI"
     }, void 0, false, {
         fileName: "[project]/app/layout.jsx",
         lineNumber: 14,
@@ -48,7 +48,7 @@ const footer = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f
     children: [
         "MIT ",
         new Date().getFullYear(),
-        " © Quantera.AI."
+        " © VV.AI."
     ]
 }, void 0, true, {
     fileName: "[project]/app/layout.jsx",
@@ -57,16 +57,13 @@ const footer = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f
 }, this);
 async function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
-        // Not required, but good for SEO
         lang: "en",
-        // Required to be set
         dir: "ltr",
-        // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
         suppressHydrationWarning: true,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2f$dist$2f$client$2f$components$2f$head$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Head"], {}, void 0, false, {
                 fileName: "[project]/app/layout.jsx",
-                lineNumber: 30,
+                lineNumber: 23,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
@@ -76,19 +73,18 @@ async function RootLayout({ children }) {
                     pageMap: await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nextra$2f$dist$2f$server$2f$page$2d$map$2f$get$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPageMap"])(),
                     footer: footer,
                     docsRepositoryBase: "https://github.com/shuding/nextra/blob/main/examples/docs",
-                    // ... Your additional layout options
                     sidebar: {
                         defaultMenuCollapseLevel: 1
                     },
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/app/layout.jsx",
-                    lineNumber: 36,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/layout.jsx",
-                lineNumber: 35,
+                lineNumber: 24,
                 columnNumber: 7
             }, this)
         ]
