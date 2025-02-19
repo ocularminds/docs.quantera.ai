@@ -8,15 +8,11 @@ export function CustomLayout({ children, ...props }) {
   const sidebarFooterRef = useRef(null);
 
   useEffect(() => {
-    // Find the sidebar container
     const sidebarContainer = document.querySelector(".nextra-sidebar-footer");
     if (sidebarContainer) {
-      // Create a div for the custom footer
       const footerDiv = document.createElement("div");
       sidebarFooterRef.current = footerDiv;
       sidebarContainer.appendChild(footerDiv);
-
-      // Cleanup on unmount
       return () => {
         sidebarContainer.removeChild(footerDiv);
       };

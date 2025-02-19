@@ -1,8 +1,11 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/subscribe": "pages/subscribe.js",
+  "/_error": "pages/_error.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
+  "/api/keys": "pages/api/keys.js",
   "/api/subscriptions": "pages/api/subscriptions.js",
-  "/_error": "pages/_error.js"
+  "/ssm": "pages/ssm.js",
+  "/subscribe": "pages/subscribe.js",
+  "/login": "pages/login.js",
+  "/_document": "pages/_document.js"
 }

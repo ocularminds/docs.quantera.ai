@@ -6,6 +6,10 @@ export default {
   repository: 'https://github.com/shuding/nextra', 
   docsRepositoryBase: 'https://github.com/shuding/nextra/blob/master', 
   navigation: true,
+  navbar: {
+    component: 'components/Navbar', // Path to your shadowed Navbar component
+    // ... other navbar options if needed
+  },
   sidebar: {
     defaultMenuCollapseLevel: 1,
     items: [

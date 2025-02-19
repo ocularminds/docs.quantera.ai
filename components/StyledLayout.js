@@ -1,5 +1,5 @@
 import { Layout, Navbar, Footer } from "nextra-theme-docs";
-import { Banner, Head } from "nextra/components";
+import { Banner } from "nextra/components";
 import { pageMap } from "../components/Constants";
 
 const banner = <Banner storageKey="quantera">Quantera.AI 2.0 is released 🎉</Banner>;

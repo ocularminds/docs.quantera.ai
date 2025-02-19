@@ -1,5 +1,1 @@
-const CHUNK_PUBLIC_PATH = "server/pages/_app.js";
-const runtime = require("../chunks/ssr/[turbopack]_runtime.js");
-runtime.loadChunk("server/chunks/ssr/[root of the server]__d5b753._.js");
-runtime.loadChunk("server/chunks/ssr/node_modules_nextra-theme-docs_dist_style_eea3e8.css");
-module.exports = runtime.getOrInstantiateRuntimeModule("[project]/pages/_app.js [ssr] (ecmascript)", CHUNK_PUBLIC_PATH).exports;
+(()=>{var e={};e.id=636,e.ids=[636],e.modules={25689:(e,r,s)=>{"use strict";s.r(r),s.d(r,{default:()=>u});var t=s(8732);s(6471);var i=s(4722);let u=function({Component:e,pageProps:r}){return(0,t.jsx)(t.Fragment,{children:(0,t.jsx)(i.SessionProvider,{session:r.session,children:(0,t.jsx)(e,{...r})})})}},6471:()=>{},4722:e=>{"use strict";e.exports=require("next-auth/react")},8732:e=>{"use strict";e.exports=require("react/jsx-runtime")}};var r=require("../webpack-runtime.js");r.C(e);var s=r(r.s=25689);module.exports=s})();

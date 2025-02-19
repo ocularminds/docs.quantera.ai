@@ -45,12 +45,4 @@ export default {
       title: 'Visualization',
       type: 'page'
     },
-    subscribe: {
-      title: 'On Board',
-      type: 'page'
-    },
-    login: {
-      title: 'Sign In',
-      type: 'page'
-    },
   }

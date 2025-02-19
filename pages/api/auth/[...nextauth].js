@@ -1,12 +1,11 @@
 import NextAuth from "next-auth";
 import AppleProvider from "next-auth/providers/apple"
 import GoogleProvider from "next-auth/providers/google"
-//import EmailProvider from "next-auth/providers/email"
+import CredentialsProvider from 'next-auth/providers/credentials';
 
 export default NextAuth({
   secret: process.env.SECRET,
   providers: [
-    // OAuth authentication providers
     AppleProvider({
       clientId: process.env.APPLE_ID,
       clientSecret: process.env.APPLE_SECRET,
@@ -14,23 +13,30 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-    }),/*
-    // Sign in with passwordless email link
-    EmailProvider({
-      server: process.env.MAIL_SERVER,
-      from: "<no-reply@example.com>",
-    }),*/
+    }),CredentialsProvider({
+      name: "Credentials",
+      async authorize(credentials) {
+        return await verify(credentials);
+      },
+    }),
   ],
 
   callbacks: {
-     session({ session, token, user }) {
-      console.log("Session callback called"); // Add this
+    async session({ session, token, user }) {
+      if (session?.user) {
+        session.user.id = token.sub;
+      }
       return session;
     },
-     login({ account, user, credentials }) {
-      console.log("SignIn callback called"); // Add this
-      return true;
+    async jwt({ token, user }) {
+      if (user) {
+        token.sub = user.id;
+      }
+      return token;
     },
+  },
+  pages: {
+    signIn: '/auth/login',
   },
   events: {
       async error(message) {

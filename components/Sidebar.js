@@ -1,4 +1,3 @@
-// components/Sidebar.js
 import { useEffect, useState } from 'react';
 import Subscription from './Subscription';
 import ApiKey from './ApiKey';

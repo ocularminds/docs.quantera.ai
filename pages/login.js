@@ -3,13 +3,13 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import { pageMap } from "../components/Constants";
 import StyledLayout from "../components/StyledLayout";
 import { styles } from "../components/Constants";
+import Image from "next/image";
+import logo from "../assets/logoo.png";
 
 export async function getStaticProps() {  
-  //const pageMap = await getPageMap('./pages') // Path to your pages directory
-
   return {
     props: {
-      pageMap, // Pass the pageMap to the component
+      pageMap, 
     },
   }
 }
@@ -32,19 +32,21 @@ export function Access(){
 }
 
 export function Profile(){
-  return(<>
-        Signed in as {session.user.email} <br />
-        <button style={styles.button} onClick={() => signOut()}>Sign out</button>
-      </>)
+  return (
+  <>
+      Signed in as {session.user.email} <br />
+      <button style={styles.button} onClick={() => signOut()}>Sign out</button>
+    </>
+  )
 }
 
 export default function Login() {
   const { data: session } = useSession();
-  
   return (
     <StyledLayout>
     <div style={styles.container}>
       <div style={styles.card}>
+      <Image src={logo} className="log_side" alt="log_side" />
       {session && <Profile/>}
       {!session && <Access/>}
       </div>
